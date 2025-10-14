@@ -45,13 +45,6 @@ public class CatTest {
     }
 
     @Test
-    public void testConstructorWithFeline() {
-        Feline feline = new Feline();
-        Cat cat = new Cat(feline);
-        assertNotNull(cat);
-    }
-
-    @Test
     public void testConstructorWithPredator() {
         Cat cat = new Cat(predator);
         assertNotNull(cat);

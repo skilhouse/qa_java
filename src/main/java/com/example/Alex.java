@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Alex extends Lion {
 
-    public Alex() throws Exception {
-        super("Самец", new Feline());
+    public Alex(Predator predator) throws Exception {
+        super("Самец", predator);
     }
 
     public List<String> getFriends() {

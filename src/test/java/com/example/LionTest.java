@@ -17,6 +17,18 @@ public class LionTest {
     private Predator predator;
 
     @Test
+    public void testMaleLionHasMane() throws Exception {
+        Lion lion = new Lion("Самец", predator);
+        assertTrue(lion.doesHaveMane());
+    }
+
+    @Test
+    public void testFemaleLionHasNoMane() throws Exception {
+        Lion lion = new Lion("Самка", predator);
+        assertFalse(lion.doesHaveMane());
+    }
+
+    @Test
     public void testGetKittens() throws Exception {
         Mockito.when(predator.getKittens()).thenReturn(3);
 
@@ -36,14 +48,5 @@ public class LionTest {
 
         assertEquals(expectedFood, actualFood);
         Mockito.verify(predator).eatMeat();
-    }
-
-    @Test
-    public void testDoesHaveMane() throws Exception {
-        Lion maleLion = new Lion("Самец", predator);
-        Lion femaleLion = new Lion("Самка", predator);
-
-        assertTrue(maleLion.doesHaveMane());
-        assertFalse(femaleLion.doesHaveMane());
     }
 }
